@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="LEGIONS - A modern responsive website">
-    <meta name="theme-color" content="#2c3e50">
+    <meta name="theme-color" content="#080d13">
     <title>LEGIONS</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">My Website</div>
+            <div class="logo">
+                <!-- Add your logo image here -->
+                <img src="images/logo.png" alt="LEGIONS" class="logo-img">
+                <span>LEGIONS</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">The LEGIONS Project</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -22,28 +26,38 @@
 
     <main>
         <section id="home" class="hero">
-            <h1>Welcome to My Website</h1>
-            <p>This is a beautiful and modern website created just for you!</p>
+            <div class="hero-content">
+                <h1>LEGIONS</h1>
+                <p>The Future of Trading Card Games</p>
+            </div>
         </section>
 
         <section id="about" class="about">
-            <h2>About Us</h2>
-            <p>We are passionate about creating amazing websites.</p>
+            <div class="about-content">
+                <h2>The LEGIONS Project</h2>
+                <p>LEGIONS is more than a TCG—it's a revolution. With unique mechanics, limitless scalability, and groundbreaking innovations, it's the future of trading card games. A rare opportunity for bold visionaries ready to own the market.</p>
+                <a href="#pitch" class="pitch-link">Here's a pitch for you!</a>
+            </div>
+        </section>
+
+        <section id="pitch" class="pitch hidden">
+            <!-- Pitch deck section - will be populated later -->
+            <div class="pitch-content">
+                <h2>Pitch Deck</h2>
+                <p>Coming soon...</p>
+            </div>
         </section>
 
         <section id="contact" class="contact">
-            <h2>Contact Us</h2>
-            <form id="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <div class="contact-content">
+                <h2>Contact Us</h2>
+                <a href="mailto:email@branobielik.com" class="contact-email">email@branobielik.com</a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
+        <p>&copy; 2024 LEGIONS. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
