@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="LEGIONS Pitch Deck">
     <meta name="theme-color" content="#080d13">
-    <title>LEGIONS Pitch Deck</title>
+    <title>LEGIONS Pitch Deck (Fallback)</title>
     <style>
         body, html {
             margin: 0;
@@ -15,7 +15,7 @@
             overflow: hidden;
             background: #080d13;
         }
-        .pdf-container {
+        .viewer-container {
             position: fixed;
             top: 0;
             left: 0;
@@ -23,7 +23,7 @@
             height: 100%;
             background: #080d13;
         }
-        .pdf-viewer {
+        .docs-viewer {
             position: absolute;
             top: 0;
             left: 0;
@@ -61,44 +61,10 @@
 <body>
     <a href="./" class="back-button">← Back to LEGIONS</a>
     
-    <div class="pdf-container">
-        <object class="pdf-viewer" 
-                data="pitch deck/pitch-deck.pdf" 
-                type="application/pdf">
-            <embed class="pdf-viewer" 
-                   src="pitch deck/pitch-deck.pdf" 
-                   type="application/pdf" />
-        </object>
+    <div class="viewer-container">
+        <iframe class="docs-viewer" 
+                src="https://docs.google.com/viewer?url=https://branobielik.github.io/LEGIONS/pitch%20deck/pitch-deck.pdf&embedded=true" 
+                frameborder="0"></iframe>
     </div>
-
-    <script>
-        // Prevent scrolling on mobile
-        document.addEventListener('touchmove', function(e) {
-            if (e.target.classList.contains('pdf-viewer')) return;
-            e.preventDefault();
-        }, { passive: false });
-
-        // Force landscape on mobile
-        function checkOrientation() {
-            if (window.matchMedia("(max-width: 768px)").matches) {
-                if (window.orientation === 0) {
-                    document.body.style.transform = 'rotate(90deg)';
-                    document.body.style.transformOrigin = 'left top';
-                    document.body.style.width = '100vh';
-                    document.body.style.height = '100vw';
-                    document.body.style.position = 'absolute';
-                    document.body.style.top = '100%';
-                    document.body.style.left = '0';
-                } else {
-                    document.body.style = '';
-                }
-            }
-        }
-
-        // Check orientation on load and changes
-        window.addEventListener('load', checkOrientation);
-        window.addEventListener('orientationchange', checkOrientation);
-        window.addEventListener('resize', checkOrientation);
-    </script>
 </body>
 </html> 
