@@ -117,7 +117,8 @@ nav {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     opacity: 0;
     position: relative;
-    animation: moveAcross 4s linear forwards;
+    animation: moveAcross 6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    will-change: transform, opacity;
 }
 
 .hero p {
@@ -127,7 +128,8 @@ nav {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     opacity: 0;
     position: relative;
-    animation: moveAcross 4s linear 0.5s forwards;
+    animation: moveAcross 6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s forwards;
+    will-change: transform, opacity;
 }
 
 @keyframes moveAcross {
@@ -135,13 +137,13 @@ nav {
         opacity: 0;
         transform: translateX(-100%);
     }
-    10% {
+    15% {
         opacity: 0.75;
-        transform: translateX(-80%);
+        transform: translateX(-70%);
     }
-    90% {
+    85% {
         opacity: 0.75;
-        transform: translateX(80%);
+        transform: translateX(70%);
     }
     100% {
         opacity: 0;
