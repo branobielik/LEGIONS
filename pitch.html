@@ -6,8 +6,6 @@
     <meta name="description" content="LEGIONS Pitch Deck">
     <meta name="theme-color" content="#080d13">
     <title>LEGIONS Pitch Deck</title>
-    <!-- PDF.js CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf_viewer.min.css">
     <style>
         body, html {
             margin: 0;
@@ -48,51 +46,41 @@
         .back-button:hover {
             background: rgba(41, 128, 185, 0.95);
         }
-        #pdf-viewer-mobile {
-            display: none;
-            width: 100%;
-            height: 100vh;
-            background: #fff;
-        }
-        .pdf-controls {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(52, 152, 219, 0.9);
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-            z-index: 1000;
-            backdrop-filter: blur(5px);
-        }
-        .pdf-controls button {
-            background: transparent;
-            border: none;
-            color: white;
-            padding: 5px 15px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .pdf-controls button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
         @media (max-width: 768px) {
-            .pdf-viewer {
-                display: none;
+            .back-button {
+                top: 10px;
+                left: 10px;
+                padding: 8px 16px;
+                font-size: 14px;
             }
-            #pdf-viewer-mobile {
-                display: block;
+            /* Force landscape mode message */
+            @media (orientation: portrait) {
+                .orientation-message {
+                    display: flex;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(8, 13, 19, 0.95);
+                    color: white;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    z-index: 2000;
+                    font-family: Arial, sans-serif;
+                    padding: 20px;
+                }
+                .pdf-container {
+                    opacity: 0.1;
+                }
             }
-            .pdf-controls {
-                display: flex;
-                gap: 20px;
-            }
-            /* Landscape mode optimizations */
             @media (orientation: landscape) {
-                #pdf-viewer-mobile {
-                    height: 100vh;
+                .orientation-message {
+                    display: none;
+                }
+                .pdf-container {
+                    opacity: 1;
                 }
             }
         }
@@ -101,120 +89,29 @@
 <body>
     <a href="./" class="back-button">← Back to LEGIONS</a>
     
-    <!-- Desktop PDF viewer -->
+    <div class="orientation-message">
+        Please rotate your device to landscape mode for the best viewing experience
+    </div>
+
     <div class="pdf-container">
         <iframe class="pdf-viewer" 
-                src="pitch deck/pitch-deck.pdf#view=Fit&zoom=page-fit" 
-                type="application/pdf" 
-                frameborder="0"></iframe>
+                src="https://docs.google.com/viewer?url=https://branobielik.github.io/LEGIONS/pitch%20deck/pitch-deck.pdf&embedded=true" 
+                frameborder="0" 
+                scrolling="no"></iframe>
     </div>
 
-    <!-- Mobile PDF viewer -->
-    <div id="pdf-viewer-mobile"></div>
-    <div class="pdf-controls">
-        <button id="prev">←</button>
-        <button id="next">→</button>
-    </div>
-
-    <!-- PDF.js scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script>
-        // Check if mobile
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-        if (isMobile) {
-            // Initialize PDF.js
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-            let pdfDoc = null,
-                pageNum = 1,
-                pageRendering = false,
-                pageNumPending = null,
-                scale = 1.5,
-                canvas = document.createElement('canvas'),
-                ctx = canvas.getContext('2d');
-
-            document.getElementById('pdf-viewer-mobile').appendChild(canvas);
-
-            function renderPage(num) {
-                pageRendering = true;
-                pdfDoc.getPage(num).then(function(page) {
-                    const viewport = page.getViewport({scale: scale});
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-
-                    const renderContext = {
-                        canvasContext: ctx,
-                        viewport: viewport
-                    };
-                    const renderTask = page.render(renderContext);
-
-                    renderTask.promise.then(function() {
-                        pageRendering = false;
-                        if (pageNumPending !== null) {
-                            renderPage(pageNumPending);
-                            pageNumPending = null;
-                        }
-                    });
-                });
-
-                // Update navigation buttons
-                document.getElementById('prev').disabled = num <= 1;
-                document.getElementById('next').disabled = num >= pdfDoc.numPages;
-            }
-
-            function queueRenderPage(num) {
-                if (pageRendering) {
-                    pageNumPending = num;
-                } else {
-                    renderPage(num);
-                }
-            }
-
-            function onPrevPage() {
-                if (pageNum <= 1) return;
-                pageNum--;
-                queueRenderPage(pageNum);
-            }
-
-            function onNextPage() {
-                if (pageNum >= pdfDoc.numPages) return;
-                pageNum++;
-                queueRenderPage(pageNum);
-            }
-
-            // Load PDF
-            pdfjsLib.getDocument('pitch deck/pitch-deck.pdf').promise.then(function(pdfDoc_) {
-                pdfDoc = pdfDoc_;
-                renderPage(pageNum);
-            });
-
-            document.getElementById('prev').addEventListener('click', onPrevPage);
-            document.getElementById('next').addEventListener('click', onNextPage);
-
-            // Handle touch swipe
-            let touchstartX = 0;
-            let touchendX = 0;
-            
-            document.addEventListener('touchstart', e => {
-                touchstartX = e.changedTouches[0].screenX;
-            });
-
-            document.addEventListener('touchend', e => {
-                touchendX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-
-            function handleSwipe() {
-                if (touchendX < touchstartX) onNextPage();
-                if (touchendX > touchstartX) onPrevPage();
-            }
-        }
-
         // Prevent scrolling on mobile
         document.addEventListener('touchmove', function(e) {
             e.preventDefault();
         }, { passive: false });
+
+        // Handle orientation changes
+        window.addEventListener('orientationchange', function() {
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 200);
+        });
     </script>
 </body>
 </html> 
