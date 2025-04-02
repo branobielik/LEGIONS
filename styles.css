@@ -370,4 +370,19 @@ footer {
     .contact-email {
         font-size: 1.2rem;
     }
+}
+
+.mobile-note {
+    margin-left: 10px;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.mobile-note a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.mobile-note a:hover {
+    opacity: 1;
 } 
