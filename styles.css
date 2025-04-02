@@ -431,9 +431,13 @@ footer {
             opacity: 0;
             transform: translateX(-100%);
         }
+        5% {
+            opacity: 0.75;
+            transform: translateX(-80%);
+        }
         10% {
             opacity: 0.75;
-            transform: translateX(-70%);
+            transform: translateX(-40%);
         }
         15% {
             opacity: 0.75;
@@ -443,9 +447,17 @@ footer {
             opacity: 0.75;
             transform: translateX(0%);
         }
+        75% {
+            opacity: 0.75;
+            transform: translateX(25%);
+        }
         85% {
             opacity: 0.75;
             transform: translateX(50%);
+        }
+        95% {
+            opacity: 0.75;
+            transform: translateX(75%);
         }
         100% {
             opacity: 0;
