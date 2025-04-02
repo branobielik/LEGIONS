@@ -38,10 +38,13 @@
             </div>
         </section>
 
-        <section id="pitch" class="pitch">
+        <section id="pitch" class="pitch hidden">
             <div class="pitch-content">
-                <div class="pdf-container">
-                    <iframe id="pdf-viewer" src="pitch deck/pitch-deck.pdf" type="application/pdf" width="100%" height="100%"></iframe>
+                <div class="pdf-container" id="pdf-container">
+                    <!-- Fallback message if PDF fails to load -->
+                    <div class="pdf-fallback">
+                        <p>Loading presentation...</p>
+                    </div>
                 </div>
                 <button class="close-pitch" onclick="closePitch()">×</button>
             </div>
@@ -59,19 +62,37 @@
         <p>&copy; 2024 LEGIONS. All rights reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
     <script>
+        // Pitch deck handling
         function showPitch() {
             document.getElementById('pitch').classList.remove('hidden');
+            loadPDF();
         }
         
         function closePitch() {
             document.getElementById('pitch').classList.add('hidden');
+            const container = document.getElementById('pdf-container');
+            container.innerHTML = '<div class="pdf-fallback"><p>Loading presentation...</p></div>';
         }
         
-        document.querySelector('.pitch-link').addEventListener('click', function(e) {
-            e.preventDefault();
-            showPitch();
-        });
+        function loadPDF() {
+            const container = document.getElementById('pdf-container');
+            const iframe = document.createElement('iframe');
+            iframe.src = './pitch deck/pitch-deck.pdf';
+            iframe.width = '100%';
+            iframe.height = '100%';
+            iframe.onload = function() {
+                const fallback = container.querySelector('.pdf-fallback');
+                if (fallback) {
+                    fallback.style.display = 'none';
+                }
+            };
+            iframe.onerror = function() {
+                container.innerHTML = '<div class="pdf-fallback"><p>Unable to load presentation. Please try again later.</p></div>';
+            };
+            container.appendChild(iframe);
+        }
     </script>
 </body>
 </html> 
