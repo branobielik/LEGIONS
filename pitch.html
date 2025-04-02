@@ -83,12 +83,6 @@
                 padding: 8px 16px;
                 font-size: 14px;
             }
-            .desktop-viewer {
-                display: none;
-            }
-            .mobile-viewer {
-                display: block;
-            }
             @media (orientation: portrait) {
                 .orientation-message {
                     display: flex;
@@ -106,14 +100,6 @@
                 }
             }
         }
-        @media (min-width: 769px) {
-            .desktop-viewer {
-                display: block;
-            }
-            .mobile-viewer {
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
@@ -126,16 +112,7 @@
         </div>
     </div>
 
-    <!-- Desktop PDF viewer -->
-    <div class="viewer-container desktop-viewer">
-        <object class="pdf-viewer" 
-                data="pitch deck/pitch-deck.pdf" 
-                type="application/pdf">
-        </object>
-    </div>
-
-    <!-- Mobile Google Docs viewer -->
-    <div class="viewer-container mobile-viewer">
+    <div class="viewer-container">
         <iframe class="pdf-viewer" 
                 src="https://docs.google.com/viewer?url=https://branobielik.github.io/LEGIONS/pitch%20deck/pitch-deck.pdf&embedded=true" 
                 frameborder="0"></iframe>
