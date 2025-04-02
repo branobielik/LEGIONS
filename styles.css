@@ -364,11 +364,13 @@ footer {
     .hero h1 {
         font-size: 3rem;
         animation-duration: 4s;
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .hero p {
         font-size: 1.4rem;
         animation-duration: 4s;
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .about p {
@@ -419,11 +421,13 @@ footer {
     .hero h1 {
         font-size: 3rem;
         animation-duration: 4s;
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .hero p {
         font-size: 1.4rem;
         animation-duration: 4s;
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     @keyframes moveAcross {
@@ -431,13 +435,9 @@ footer {
             opacity: 0;
             transform: translateX(-100%);
         }
-        5% {
-            opacity: 0.75;
-            transform: translateX(-80%);
-        }
         10% {
             opacity: 0.75;
-            transform: translateX(-40%);
+            transform: translateX(-50%);
         }
         15% {
             opacity: 0.75;
@@ -447,17 +447,9 @@ footer {
             opacity: 0.75;
             transform: translateX(0%);
         }
-        75% {
-            opacity: 0.75;
-            transform: translateX(25%);
-        }
         85% {
             opacity: 0.75;
             transform: translateX(50%);
-        }
-        95% {
-            opacity: 0.75;
-            transform: translateX(75%);
         }
         100% {
             opacity: 0;
