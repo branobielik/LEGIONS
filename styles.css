@@ -278,10 +278,12 @@ footer {
 
     .hero h1 {
         font-size: 3rem;
+        animation-duration: 4s;
     }
     
     .hero p {
         font-size: 1.4rem;
+        animation-duration: 4s;
     }
     
     .about p {
