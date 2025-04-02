@@ -109,12 +109,17 @@ nav {
     text-align: center;
     color: white;
     padding: 2rem;
+    opacity: 0;
+    animation: fadeInOut 5s ease-in-out forwards;
 }
 
 .hero h1 {
     font-size: 4.5rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    transform: translateX(-100%);
+    opacity: 0;
+    animation: slideIn 1s ease-out forwards, fadeOut 1s ease-in forwards 4s;
 }
 
 .hero p {
@@ -122,6 +127,29 @@ nav {
     max-width: 600px;
     margin: 0 auto;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    transform: translateX(-100%);
+    opacity: 0;
+    animation: slideIn 1s ease-out 0.5s forwards, fadeOut 1s ease-in forwards 4s;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 0.75;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /* About Section */
