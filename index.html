@@ -34,7 +34,7 @@
             <div class="about-content">
                 <h2>The LEGIONS project</h2>
                 <p>LEGIONS is more than a TCG—it's a revolution. With unique mechanics, limitless scalability, and groundbreaking innovations, it's the future of trading card games. A rare opportunity for bold visionaries ready to own the market.</p>
-                <a href="#pitch" class="pitch-link">Here's a pitch for you!</a>
+                <a href="pitch.html" class="pitch-link">Here's a pitch for you!</a>
             </div>
         </section>
 
@@ -63,58 +63,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Pitch deck handling
-        function showPitch() {
-            console.log('Opening pitch deck...');
-            document.getElementById('pitch').classList.remove('hidden');
-            loadPDF();
-        }
-        
-        function closePitch() {
-            console.log('Closing pitch deck...');
-            document.getElementById('pitch').classList.add('hidden');
-            const container = document.getElementById('pdf-container');
-            container.innerHTML = '<div class="pdf-fallback"><p>Loading presentation...</p></div>';
-        }
-        
-        function loadPDF() {
-            console.log('Loading PDF...');
-            const container = document.getElementById('pdf-container');
-            const iframe = document.createElement('iframe');
-            iframe.src = 'pitch deck/pitch-deck.pdf';
-            console.log('PDF path:', iframe.src);
-            iframe.width = '100%';
-            iframe.height = '100%';
-            iframe.onload = function() {
-                console.log('PDF loaded successfully');
-                const fallback = container.querySelector('.pdf-fallback');
-                if (fallback) {
-                    fallback.style.display = 'none';
-                }
-            };
-            iframe.onerror = function(error) {
-                console.error('Error loading PDF:', error);
-                container.innerHTML = '<div class="pdf-fallback"><p>Unable to load presentation. Please try again later.</p></div>';
-            };
-            container.appendChild(iframe);
-        }
-
-        // Add event listener for the pitch link
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Setting up pitch deck event listener...');
-            const pitchLink = document.querySelector('.pitch-link');
-            if (pitchLink) {
-                console.log('Pitch link found');
-                pitchLink.addEventListener('click', function(e) {
-                    console.log('Pitch link clicked');
-                    e.preventDefault();
-                    showPitch();
-                });
-            } else {
-                console.error('Pitch link not found');
-            }
-        });
-    </script>
 </body>
 </html> 
