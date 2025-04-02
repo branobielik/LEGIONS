@@ -389,4 +389,20 @@ footer {
 
 .mobile-note a:hover {
     opacity: 1;
+}
+
+.pitch-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.mobile-note {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.mobile-note .pitch-link {
+    font-size: 1.2rem;
 } 
