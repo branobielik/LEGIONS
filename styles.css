@@ -364,13 +364,13 @@ footer {
     .hero h1 {
         font-size: 3rem;
         animation-duration: 4s;
-        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        animation-timing-function: linear;
     }
     
     .hero p {
         font-size: 1.4rem;
         animation-duration: 4s;
-        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        animation-timing-function: linear;
     }
     
     .about p {
@@ -421,13 +421,13 @@ footer {
     .hero h1 {
         font-size: 3rem;
         animation-duration: 4s;
-        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        animation-timing-function: linear;
     }
     
     .hero p {
         font-size: 1.4rem;
         animation-duration: 4s;
-        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        animation-timing-function: linear;
     }
     
     @keyframes moveAcross {
@@ -435,11 +435,43 @@ footer {
             opacity: 0;
             transform: translateX(-100%);
         }
+        5% {
+            opacity: 0.75;
+            transform: translateX(-90%);
+        }
         10% {
+            opacity: 0.75;
+            transform: translateX(-80%);
+        }
+        15% {
+            opacity: 0.75;
+            transform: translateX(-70%);
+        }
+        20% {
+            opacity: 0.75;
+            transform: translateX(-60%);
+        }
+        25% {
             opacity: 0.75;
             transform: translateX(-50%);
         }
-        15% {
+        30% {
+            opacity: 0.75;
+            transform: translateX(-40%);
+        }
+        35% {
+            opacity: 0.75;
+            transform: translateX(-30%);
+        }
+        40% {
+            opacity: 0.75;
+            transform: translateX(-20%);
+        }
+        45% {
+            opacity: 0.75;
+            transform: translateX(-10%);
+        }
+        50% {
             opacity: 0.75;
             transform: translateX(0%);
         }
@@ -447,9 +479,29 @@ footer {
             opacity: 0.75;
             transform: translateX(0%);
         }
+        70% {
+            opacity: 0.75;
+            transform: translateX(10%);
+        }
+        75% {
+            opacity: 0.75;
+            transform: translateX(20%);
+        }
+        80% {
+            opacity: 0.75;
+            transform: translateX(30%);
+        }
         85% {
             opacity: 0.75;
+            transform: translateX(40%);
+        }
+        90% {
+            opacity: 0.75;
             transform: translateX(50%);
+        }
+        95% {
+            opacity: 0.75;
+            transform: translateX(60%);
         }
         100% {
             opacity: 0;
