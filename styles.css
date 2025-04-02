@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -34,12 +40,6 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
-}
-
-.logo-img {
-    height: 40px;
-    width: auto;
 }
 
 .logo span {
@@ -71,10 +71,12 @@ nav {
     background-image: url('Design-HOME.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    scroll-snap-align: start;
 }
 
 .hero::before {
@@ -110,14 +112,24 @@ nav {
 
 /* About Section */
 .about {
-    padding: 8rem 2rem;
-    background: linear-gradient(135deg, #080d13 0%, #111a26 100%);
+    min-height: 100vh;
+    padding: 0;
+    background: linear-gradient(135deg, 
+        rgba(8, 13, 19, 0.95) 0%,
+        rgba(17, 26, 38, 0.98) 50%,
+        rgba(8, 13, 19, 0.95) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
 }
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    padding: 2rem;
 }
 
 .about h2 {
@@ -164,19 +176,30 @@ nav {
 
 /* Contact Section */
 .contact {
-    padding: 8rem 2rem;
-    background: linear-gradient(135deg, #111a26 0%, #080d13 100%);
+    min-height: 100vh;
+    padding: 0;
+    background: linear-gradient(135deg, 
+        rgba(17, 26, 38, 0.98) 0%,
+        rgba(8, 13, 19, 0.99) 50%,
+        rgba(17, 26, 38, 0.98) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
 }
 
 .contact-content {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
+    padding: 2rem;
 }
 
 .contact h2 {
     margin-bottom: 2rem;
     color: #fff;
+    font-size: 2.5rem;
 }
 
 .contact-email {
@@ -196,6 +219,10 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 /* Responsive Design */
