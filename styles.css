@@ -375,7 +375,11 @@ footer {
 .mobile-note {
     margin-left: 10px;
     font-size: 0.9em;
-    opacity: 0.8;
+    color: #fff;
+}
+
+.mobile-note .pitch-link {
+    font-size: 1.2rem;
 }
 
 .mobile-note a {
