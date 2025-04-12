@@ -3,60 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LEGIONS - A modern responsive website">
-    <meta name="theme-color" content="#080d13">
-    <title>LEGIONS</title>
+    <meta name="description" content="LEGIONS - Choose your investor presentation">
+    <meta name="theme-color" content="#2c3e50">
+    <title>LEGIONS - Investor Portal</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <span>LEGIONS</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">The LEGIONS project</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="logo">LEGIONS</div>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1>LEGIONS</h1>
-                <p>The Future of Trading Card Games</p>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="about-content">
-                <h2>The LEGIONS project</h2>
-                <p>LEGIONS is more than a TCG—it's a revolution. With unique mechanics, limitless scalability, and groundbreaking innovations, it's the future of trading card games. A rare opportunity for bold visionaries ready to own the market.</p>
-                <div class="pitch-links">
-                    <a href="pitch.html" class="pitch-link">Here's a pitch for you!</a>
-                    <span class="mobile-note">(<a href="pitch-fallback.html" class="pitch-link">for mobile version</a>)</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="pitch" class="pitch hidden">
-            <div class="pitch-content">
-                <div class="pdf-container" id="pdf-container">
-                    <!-- Fallback message if PDF fails to load -->
-                    <div class="pdf-fallback">
-                        <p>Loading presentation...</p>
-                    </div>
-                </div>
-                <button class="close-pitch" onclick="closePitch()">×</button>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="contact-content">
-                <h2>Contact Us</h2>
-                <a href="mailto:email@branobielik.com" class="contact-email">email@branobielik.com</a>
+        <section class="investor-choice">
+            <h1>Welcome to LEGIONS</h1>
+            <p>Please select your investor type to view the appropriate presentation:</p>
+            
+            <div class="investor-buttons">
+                <a href="vc-investors/index.html" class="investor-btn vc-btn">
+                    <h2>VC Investors</h2>
+                    <p>View presentation for Venture Capital investors</p>
+                </a>
+                
+                <a href="angel-investors/index.html" class="investor-btn angel-btn">
+                    <h2>Angel Investors</h2>
+                    <p>View presentation for Angel investors</p>
+                </a>
             </div>
         </section>
     </main>
@@ -64,7 +37,5 @@
     <footer>
         <p>&copy; 2024 LEGIONS. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html> 
