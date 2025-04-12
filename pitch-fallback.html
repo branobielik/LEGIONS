@@ -23,9 +23,7 @@
             width: 100%;
             height: 100%;
             background: #080d13;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            opacity: 0.1;
         }
         .docs-viewer {
             width: 100%;
@@ -74,32 +72,33 @@
             }
         }
         .orientation-message {
-            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(8, 13, 19, 0.95);
+            background: #080d13;
             color: white;
             font-family: Arial, sans-serif;
             z-index: 2000;
+            display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .orientation-message .icon {
+            font-size: 48px;
+            display: block;
+            margin-bottom: 20px;
         }
         .orientation-message p {
             margin: 0;
-            font-size: 18px;
+            font-size: 20px;
             line-height: 1.5;
-        }
-        .orientation-message .icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-            display: block;
-            transform: rotate(90deg);
+            max-width: 80%;
+            color: #fff;
         }
         .loading-indicator {
             position: fixed;
@@ -110,6 +109,7 @@
             color: white;
             text-align: center;
             font-family: Arial, sans-serif;
+            display: none;
         }
         .loading-indicator .spinner {
             display: inline-block;
@@ -130,10 +130,8 @@
     <a href="./" class="back-button">← Back to LEGIONS</a>
     
     <div class="orientation-message">
-        <div>
-            <span class="icon">📱</span>
-            <p>Please rotate your device to landscape mode<br>for the best viewing experience</p>
-        </div>
+        <span class="icon">📺</span>
+        <p>Please rotate your device to landscape mode for the best viewing experience</p>
     </div>
 
     <div class="loading-indicator">
