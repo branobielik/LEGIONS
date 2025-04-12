@@ -8,6 +8,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Screen orientation handling
+const orientationMessage = document.createElement('div');
+orientationMessage.className = 'orientation-message';
+orientationMessage.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+        <path d="M12 8v8"></path>
+        <path d="M8 12h8"></path>
+    </svg>
+    <p>Please rotate your device for a better viewing experience</p>
+`;
+document.body.appendChild(orientationMessage);
+
+// Handle orientation changes
+function checkOrientation() {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            orientationMessage.style.display = 'flex';
+        } else {
+            orientationMessage.style.display = 'none';
+        }
+    } else {
+        orientationMessage.style.display = 'none';
+    }
+}
+
+// Check orientation on page load
+window.addEventListener('load', checkOrientation);
+
+// Check orientation on device rotation
+window.addEventListener('orientationchange', checkOrientation);
+window.addEventListener('resize', checkOrientation);
+
 // Form submission handling
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
