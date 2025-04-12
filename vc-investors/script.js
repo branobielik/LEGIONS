@@ -1,45 +1,11 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
 // Screen orientation handling
 const orientationMessage = document.createElement('div');
 orientationMessage.className = 'orientation-message';
 orientationMessage.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-        <path d="M12 8v8"></path>
-        <path d="M8 12h8"></path>
-    </svg>
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHJ4PSIyIiByeT0iMiI+PC9yZWN0PjxwYXRoIGQ9Ik0xMiA4djgiPjwvcGF0aD48cGF0aCBkPSJNOCAxMmg4Ij48L3BhdGg+PC9zdmc+" alt="Rotate device">
     <p>Please rotate your device for a better viewing experience</p>
 `;
 document.body.appendChild(orientationMessage);
-
-// Handle orientation changes
-function checkOrientation() {
-    if (window.matchMedia("(max-width: 768px)").matches) {
-        if (window.matchMedia("(orientation: portrait)").matches) {
-            orientationMessage.style.display = 'flex';
-        } else {
-            orientationMessage.style.display = 'none';
-        }
-    } else {
-        orientationMessage.style.display = 'none';
-    }
-}
-
-// Check orientation on page load
-window.addEventListener('load', checkOrientation);
-
-// Check orientation on device rotation
-window.addEventListener('orientationchange', checkOrientation);
-window.addEventListener('resize', checkOrientation);
 
 // Form submission handling
 const contactForm = document.getElementById('contact-form');
