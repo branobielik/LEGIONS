@@ -34,12 +34,24 @@ function checkOrientation() {
     }
 }
 
-// Check orientation on page load
-window.addEventListener('load', checkOrientation);
+// Create mobile version link
+const mobileLink = document.createElement('a');
+mobileLink.href = '#';
+mobileLink.className = 'mobile-version-link';
+mobileLink.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+        <line x1="12" y1="18" x2="12" y2="18"></line>
+    </svg>
+    (for <span class="mobile-text">MOBILE</span> version)
+`;
+mobileLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    checkOrientation();
+});
 
-// Check orientation on device rotation
-window.addEventListener('orientationchange', checkOrientation);
-window.addEventListener('resize', checkOrientation);
+// Add mobile link to the document after the hero section
+document.querySelector('.hero').appendChild(mobileLink);
 
 // Form submission handling
 const contactForm = document.getElementById('contact-form');
