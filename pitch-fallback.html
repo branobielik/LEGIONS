@@ -80,7 +80,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(8, 13, 19, 0.98);
+            background: rgba(8, 13, 19, 0.95);
             color: white;
             font-family: Arial, sans-serif;
             z-index: 2000;
@@ -90,36 +90,16 @@
             padding: 20px;
             box-sizing: border-box;
         }
-        .orientation-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        .orientation-icon {
-            font-size: 48px;
-            animation: rotate 2s ease-in-out infinite;
-            color: #3498db;
-        }
-        .orientation-text {
+        .orientation-message p {
+            margin: 0;
             font-size: 18px;
-            line-height: 1.4;
-            max-width: 300px;
-            color: #fff;
+            line-height: 1.5;
         }
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-            20% {
-                transform: rotate(0deg);
-            }
-            60% {
-                transform: rotate(90deg);
-            }
-            100% {
-                transform: rotate(90deg);
-            }
+        .orientation-message .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+            transform: rotate(90deg);
         }
         .loading-indicator {
             position: fixed;
@@ -150,9 +130,9 @@
     <a href="./" class="back-button">← Back to LEGIONS</a>
     
     <div class="orientation-message">
-        <div class="orientation-content">
-            <i class="fas fa-mobile-alt orientation-icon"></i>
-            <p class="orientation-text">Rotate your device for better viewing</p>
+        <div>
+            <span class="icon">📱</span>
+            <p>Please rotate your device to landscape mode<br>for the best viewing experience</p>
         </div>
     </div>
 
