@@ -56,4 +56,4 @@ setTimeout(function() {
     if (aboutSection) {
         aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
-}, 7000); // 6.5s for animation + 0.5s buffer 
+}, 6500); // Exactly 6.5 seconds to match the animation duration 
