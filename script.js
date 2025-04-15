@@ -48,4 +48,12 @@ sections.forEach(section => {
     section.style.transform = 'translateY(20px)';
     section.style.transition = 'all 0.5s ease-out';
     observer.observe(section);
-}); 
+});
+
+// Auto-scroll to The LEGIONS project section after 10 seconds
+setTimeout(function() {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}, 10000); 
