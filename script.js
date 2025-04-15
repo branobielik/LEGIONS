@@ -50,10 +50,10 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Auto-scroll to The LEGIONS project section after 10 seconds
+// Auto-scroll to The LEGIONS project section after the home page animation
 setTimeout(function() {
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
         aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
-}, 10000); 
+}, 7000); // 6.5s for animation + 0.5s buffer 
