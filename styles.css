@@ -435,7 +435,7 @@ footer {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 5rem;
+    padding: 0 2rem;
 }
 
 .card-container {
@@ -484,84 +484,4 @@ footer {
     100% {
         transform: rotateY(360deg);
     }
-}
-
-.coming-soon-text {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    text-align: center;
-    z-index: 1000;
-    pointer-events: none;
-}
-
-.legions-text {
-    display: block;
-    font-size: 4.5rem;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    margin-bottom: 0.5rem;
-}
-
-.coming-text {
-    display: block;
-    font-size: 2rem;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-@keyframes moveAcross {
-    0% {
-        opacity: 0;
-        transform: translate(-100%, -50%);
-    }
-    10% {
-        opacity: 1;
-        transform: translate(0, -50%);
-    }
-    90% {
-        opacity: 1;
-        transform: translate(0, -50%);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(100%, -50%);
-    }
-}
-
-.coming-soon-text {
-    animation: moveAcross 5s cubic-bezier(0.25, 0.1, 0.25, 1) 7.5s forwards;
-}
-
-/* Add dimming overlay for the entire page during animation */
-.page-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 999;
-    animation: dimPage 5s ease-in-out 7.5s forwards;
-}
-
-@keyframes dimPage {
-    0% {
-        opacity: 0;
-    }
-    10% {
-        opacity: 0.5;
-    }
-    90% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 0;
-    }
-} 
 } 
