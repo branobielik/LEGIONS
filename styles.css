@@ -182,7 +182,6 @@ nav {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    position: relative;
 }
 
 .about-content h2,
@@ -488,47 +487,58 @@ footer {
 }
 
 .coming-soon-text {
-    font-size: 4.5rem;
-    color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
     text-align: center;
-    margin: 1rem 0;
-    opacity: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.legions-text {
+    display: block;
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #fff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    animation: moveAcross 5s cubic-bezier(0.25, 0.1, 0.25, 1) 7.5s forwards;
-    will-change: transform, opacity;
+    margin-bottom: 0.5rem;
+}
+
+.coming-text {
+    display: block;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 @keyframes moveAcross {
     0% {
         opacity: 0;
-        transform: translateX(-100%);
+        transform: translate(-100%, -50%);
     }
     10% {
-        opacity: 0.75;
-        transform: translateX(-70%);
-    }
-    45% {
-        opacity: 0.75;
-        transform: translateX(0%);
-    }
-    55% {
-        opacity: 0.75;
-        transform: translateX(0%);
+        opacity: 1;
+        transform: translate(0, -50%);
     }
     90% {
-        opacity: 0.75;
-        transform: translateX(70%);
+        opacity: 1;
+        transform: translate(0, -50%);
     }
     100% {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translate(100%, -50%);
     }
 }
 
-/* Add dimming effect for the background during animation */
-.about-content::after {
-    content: '';
-    position: absolute;
+.coming-soon-text {
+    animation: moveAcross 5s cubic-bezier(0.25, 0.1, 0.25, 1) 7.5s forwards;
+}
+
+/* Add dimming overlay for the entire page during animation */
+.page-overlay {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -536,10 +546,11 @@ footer {
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     pointer-events: none;
-    animation: dimBackground 5s ease-in-out 7.5s forwards;
+    z-index: 999;
+    animation: dimPage 5s ease-in-out 7.5s forwards;
 }
 
-@keyframes dimBackground {
+@keyframes dimPage {
     0% {
         opacity: 0;
     }
@@ -552,4 +563,5 @@ footer {
     100% {
         opacity: 0;
     }
+} 
 } 
