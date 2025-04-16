@@ -54,7 +54,20 @@ sections.forEach(section => {
 setTimeout(function() {
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: 'smooth' });
+        // Force layout recalculation for mobile
+        aboutSection.style.display = 'flex';
+        aboutSection.offsetHeight; // Force reflow
+        
+        // Smooth scroll with fallback for mobile
+        try {
+            aboutSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        } catch (error) {
+            // Fallback for browsers that don't support smooth scrolling
+            window.scrollTo(0, aboutSection.offsetTop);
+        }
     }
 }, 6500); // Exactly 6.5 seconds to match the animation duration
 
