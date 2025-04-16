@@ -175,14 +175,19 @@ nav {
 }
 
 .about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-content h2,
+.about-content p {
+    width: 100%;
+    text-align: center;
 }
 
 .about h2 {
@@ -397,9 +402,9 @@ footer {
 .pitch-links {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
-    margin-top: 1rem;
+    margin: 0;
 }
 
 .mobile-version {
@@ -421,11 +426,22 @@ footer {
 }
 
 /* Rotating Card Animation */
+.card-and-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    margin-top: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .card-container {
     position: relative;
     width: 200px;
     height: 280px;
-    margin: 20px auto;
     perspective: 1000px;
 }
 
@@ -434,7 +450,7 @@ footer {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    animation: rotate 8s infinite linear;
+    animation: rotate 9s infinite linear;
 }
 
 .card-face {
