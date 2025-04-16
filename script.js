@@ -61,39 +61,41 @@ setTimeout(function() {
 // Handle audio playback
 const audio = document.getElementById('background-audio');
 
-// Create play button
-const playButton = document.createElement('button');
-playButton.innerHTML = '▶ Play Music';
-playButton.style.position = 'fixed';
-playButton.style.bottom = '20px';
-playButton.style.right = '20px';
-playButton.style.zIndex = '1000';
-playButton.style.padding = '10px 20px';
-playButton.style.backgroundColor = '#3498db';
-playButton.style.color = 'white';
-playButton.style.border = 'none';
-playButton.style.borderRadius = '5px';
-playButton.style.cursor = 'pointer';
-playButton.style.fontSize = '1rem';
-playButton.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
-
-// Add hover effect
-playButton.addEventListener('mouseover', () => {
-    playButton.style.backgroundColor = '#2980b9';
-});
-playButton.addEventListener('mouseout', () => {
-    playButton.style.backgroundColor = '#3498db';
-});
-
-// Handle click
-playButton.addEventListener('click', () => {
-    audio.volume = 0.5;
-    audio.play().then(() => {
-        playButton.remove();
-    }).catch(error => {
-        console.log('Audio playback failed:', error);
+function createPlayButton() {
+    const button = document.createElement('button');
+    button.innerHTML = '▶ Play Music';
+    button.style.position = 'fixed';
+    button.style.bottom = '20px';
+    button.style.right = '20px';
+    button.style.zIndex = '1000';
+    button.style.padding = '10px 20px';
+    button.style.backgroundColor = '#3498db';
+    button.style.color = 'white';
+    button.style.border = 'none';
+    button.style.borderRadius = '5px';
+    button.style.cursor = 'pointer';
+    button.style.fontSize = '1rem';
+    button.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+    
+    button.addEventListener('mouseover', () => {
+        button.style.backgroundColor = '#2980b9';
     });
-});
+    
+    button.addEventListener('mouseout', () => {
+        button.style.backgroundColor = '#3498db';
+    });
+    
+    button.addEventListener('click', () => {
+        audio.volume = 0.5;
+        audio.play().then(() => {
+            button.remove();
+        }).catch(error => {
+            console.log('Audio playback failed:', error);
+        });
+    });
+    
+    document.body.appendChild(button);
+}
 
-// Add button to page
-document.body.appendChild(playButton); 
+// Create play button when page loads
+window.addEventListener('load', createPlayButton); 
