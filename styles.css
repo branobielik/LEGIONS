@@ -486,17 +486,9 @@ footer {
     }
 }
 
-.coming-soon-text {
-    position: relative;
-    text-align: right;
-    margin-bottom: 1rem;
-    opacity: 0;
-    margin-right: -3rem;
-}
-
 .legions-text {
     display: block;
-    font-size: 3rem;
+    font-size: 4.5rem;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -505,9 +497,20 @@ footer {
 
 .coming-text {
     display: block;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.coming-soon-text {
+    position: relative;
+    text-align: center;
+    margin-bottom: 1rem;
+    opacity: 0;
+    margin-right: -3rem;
+    width: 100%;
+    max-width: 300px;
+    margin-left: -2rem;
 }
 
 @keyframes fadeInOut {
@@ -577,5 +580,6 @@ footer {
     
     .coming-soon-text {
         margin-right: -1rem;
+        margin-left: -1rem;
     }
 } 
