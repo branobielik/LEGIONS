@@ -137,19 +137,19 @@ nav {
         opacity: 0;
         transform: translateX(-100%);
     }
-    10% {
+    20% {
         opacity: 0.75;
         transform: translateX(-70%);
     }
-    45% {
+    40% {
         opacity: 0.75;
         transform: translateX(0%);
     }
-    55% {
+    60% {
         opacity: 0.75;
         transform: translateX(0%);
     }
-    90% {
+    80% {
         opacity: 0.75;
         transform: translateX(70%);
     }
@@ -404,7 +404,7 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    margin: 0;
+    margin-top: 2rem;
 }
 
 .mobile-version {
@@ -429,7 +429,7 @@ footer {
 .card-and-links {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     margin-top: 1rem;
     max-width: 800px;
@@ -487,19 +487,15 @@ footer {
 }
 
 .coming-soon-text {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    text-align: center;
-    z-index: 1000;
-    pointer-events: none;
+    position: relative;
+    text-align: right;
+    margin-bottom: 1rem;
+    opacity: 0;
 }
 
 .legions-text {
     display: block;
-    font-size: 4.5rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -508,32 +504,28 @@ footer {
 
 .coming-text {
     display: block;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-@keyframes moveAcross {
+@keyframes fadeInOut {
     0% {
         opacity: 0;
-        transform: translate(-100%, -50%);
     }
-    10% {
+    20% {
         opacity: 1;
-        transform: translate(0, -50%);
     }
-    90% {
+    80% {
         opacity: 1;
-        transform: translate(0, -50%);
     }
     100% {
         opacity: 0;
-        transform: translate(100%, -50%);
     }
 }
 
 .coming-soon-text {
-    animation: moveAcross 5s cubic-bezier(0.25, 0.1, 0.25, 1) 7.5s forwards;
+    animation: fadeInOut 5s ease-in-out 7.5s forwards;
 }
 
 /* Add dimming overlay for the entire page during animation */
@@ -563,4 +555,11 @@ footer {
     100% {
         opacity: 0;
     }
+}
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
 } 
