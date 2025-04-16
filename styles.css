@@ -428,14 +428,14 @@ footer {
 /* Rotating Card Animation */
 .card-and-links {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap: 2rem;
     margin-top: 1rem;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 2rem;
 }
 
 .card-container {
