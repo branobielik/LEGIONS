@@ -56,4 +56,11 @@ setTimeout(function() {
     if (aboutSection) {
         aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
-}, 6500); // Exactly 6.5 seconds to match the animation duration 
+}, 6500); // Exactly 6.5 seconds to match the animation duration
+
+// Handle audio playback
+const audio = document.getElementById('background-audio');
+window.addEventListener('load', () => {
+    audio.volume = 0.5;
+    audio.play();
+}); 
