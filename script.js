@@ -58,8 +58,40 @@ setTimeout(function() {
     }
 }, 6500); // Exactly 6.5 seconds to match the animation duration
 
-// Play audio on page load
+// Play audio on page load with error handling
 const audio = document.getElementById('background-audio');
 window.addEventListener('load', () => {
-    audio.play();
+    // Set audio properties
+    audio.volume = 0.5; // Set volume to 50%
+    
+    // Try to play the audio
+    const playPromise = audio.play();
+    
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            console.log('Audio started playing successfully');
+        }).catch(error => {
+            console.log('Audio playback failed:', error);
+            // Add a play button if autoplay fails
+            const playButton = document.createElement('button');
+            playButton.innerHTML = '▶ Play Music';
+            playButton.style.position = 'fixed';
+            playButton.style.bottom = '20px';
+            playButton.style.right = '20px';
+            playButton.style.zIndex = '1000';
+            playButton.style.padding = '10px 20px';
+            playButton.style.backgroundColor = '#3498db';
+            playButton.style.color = 'white';
+            playButton.style.border = 'none';
+            playButton.style.borderRadius = '5px';
+            playButton.style.cursor = 'pointer';
+            
+            playButton.addEventListener('click', () => {
+                audio.play();
+                playButton.remove();
+            });
+            
+            document.body.appendChild(playButton);
+        });
+    }
 }); 
