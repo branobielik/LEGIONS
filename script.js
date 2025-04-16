@@ -64,34 +64,33 @@ window.addEventListener('load', () => {
     // Set audio properties
     audio.volume = 0.5; // Set volume to 50%
     
-    // Try to play the audio
-    const playPromise = audio.play();
+    // Create play button immediately
+    const playButton = document.createElement('button');
+    playButton.innerHTML = '▶ Play Music';
+    playButton.style.position = 'fixed';
+    playButton.style.top = '50%';
+    playButton.style.left = '50%';
+    playButton.style.transform = 'translate(-50%, -50%)';
+    playButton.style.zIndex = '1000';
+    playButton.style.padding = '15px 30px';
+    playButton.style.backgroundColor = '#3498db';
+    playButton.style.color = 'white';
+    playButton.style.border = 'none';
+    playButton.style.borderRadius = '5px';
+    playButton.style.cursor = 'pointer';
+    playButton.style.fontSize = '1.2rem';
+    playButton.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
     
-    if (playPromise !== undefined) {
-        playPromise.then(() => {
+    // Force play on button click
+    playButton.addEventListener('click', () => {
+        audio.play().then(() => {
             console.log('Audio started playing successfully');
+            playButton.remove();
         }).catch(error => {
             console.log('Audio playback failed:', error);
-            // Add a play button if autoplay fails
-            const playButton = document.createElement('button');
-            playButton.innerHTML = '▶ Play Music';
-            playButton.style.position = 'fixed';
-            playButton.style.bottom = '20px';
-            playButton.style.right = '20px';
-            playButton.style.zIndex = '1000';
-            playButton.style.padding = '10px 20px';
-            playButton.style.backgroundColor = '#3498db';
-            playButton.style.color = 'white';
-            playButton.style.border = 'none';
-            playButton.style.borderRadius = '5px';
-            playButton.style.cursor = 'pointer';
-            
-            playButton.addEventListener('click', () => {
-                audio.play();
-                playButton.remove();
-            });
-            
-            document.body.appendChild(playButton);
+            alert('Failed to play audio. Please try again.');
         });
-    }
+    });
+    
+    document.body.appendChild(playButton);
 }); 
