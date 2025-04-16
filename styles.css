@@ -491,6 +491,7 @@ footer {
     text-align: right;
     margin-bottom: 1rem;
     opacity: 0;
+    margin-right: -3rem;
 }
 
 .legions-text {
@@ -513,10 +514,10 @@ footer {
     0% {
         opacity: 0;
     }
-    20% {
+    15% {
         opacity: 1;
     }
-    80% {
+    85% {
         opacity: 1;
     }
     100% {
@@ -525,7 +526,7 @@ footer {
 }
 
 .coming-soon-text {
-    animation: fadeInOut 5s ease-in-out 7.5s forwards;
+    animation: fadeInOut 7s ease-in-out 7.5s forwards;
 }
 
 /* Add dimming overlay for the entire page during animation */
