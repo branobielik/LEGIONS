@@ -762,7 +762,7 @@ footer {
     }
 }
 
-/* iPhone specific adjustments */
+/* iPhone specific adjustments - just scaling down the same layout */
 @media only screen 
     and (device-width: 375px) 
     and (device-height: 812px) 
@@ -777,29 +777,25 @@ footer {
     and (-webkit-device-pixel-ratio: 3) {
     
     .card-container {
-        width: 130px;
-        height: 162px;
+        width: 120px;
+        height: 150px;
     }
 
     .about-content {
         padding: 0.5rem;
-        gap: 0.5rem;
     }
 
     .about h2 {
         font-size: 1.8rem;
-        margin-bottom: 0.5rem;
     }
 
     .about p {
         font-size: 0.9rem;
-        margin-bottom: 0.5rem;
         line-height: 1.3;
     }
 
     .card-and-links {
         padding: 0 0.5rem;
-        gap: 0.5rem;
     }
 
     .legions-text {
