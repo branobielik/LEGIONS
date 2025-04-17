@@ -405,41 +405,44 @@ footer {
     }
 
     .card-and-links {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
         padding: 0 1rem;
+        gap: 1rem;
     }
 
     .card-container {
-        width: 160px;
-        height: 224px;
-        margin-bottom: 1rem;
+        width: 140px;
+        height: 175px;
     }
 
     .right-content {
         padding-right: 0;
-        align-items: center;
-        width: 100%;
+        align-items: flex-start;
+        width: auto;
     }
 
     .coming-soon-text {
-        text-align: center;
-        width: 100%;
-        margin: 1rem 0;
+        margin: 0 0 0.5rem 0;
     }
 
     .legions-text {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .coming-text {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .pitch-links {
-        align-items: center;
-        width: 100%;
-        text-align: center;
+        align-items: flex-start;
+        width: auto;
+        margin-top: 0.5rem;
+    }
+
+    .pitch-link {
+        font-size: 1rem;
     }
 
     /* Fix for iOS notch */
@@ -473,12 +476,41 @@ footer {
     }
 
     .about-content {
-        padding: 1rem;
-        max-width: 100%;
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .about h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .about p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
     }
 
     .card-container {
-        transform: scale(0.9);
+        width: 130px;
+        height: 162px;
+    }
+
+    .card-and-links {
+        padding: 0 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .legions-text {
+        font-size: 1.6rem;
+    }
+    
+    .coming-text {
+        font-size: 0.8rem;
+    }
+
+    .pitch-link {
+        font-size: 0.9rem;
     }
 }
 
@@ -523,27 +555,10 @@ footer {
 
 .card-container {
     position: relative;
-    width: 320px; /* Base width for desktop */
-    height: 400px; /* Maintaining 4:5 ratio */
+    width: 280px;
+    height: 350px;
     perspective: 1000px;
     margin: 20px 0;
-    align-self: flex-start;
-}
-
-.card-face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.card-face img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
 }
 
 .rotating-card {
@@ -552,6 +567,20 @@ footer {
     height: 100%;
     transform-style: preserve-3d;
     animation: rotate 9s infinite linear;
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .card-front {
@@ -676,7 +705,112 @@ footer {
 /* Mobile-specific styles */
 @media (max-width: 768px) {
     .card-container {
-        width: 160px;
-        height: 200px;
+        width: 140px;
+        height: 175px;
+    }
+
+    .about-content {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .about h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    .card-and-links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    .right-content {
+        padding-right: 0;
+        align-items: flex-start;
+        width: auto;
+    }
+
+    .coming-soon-text {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .legions-text {
+        font-size: 1.8rem;
+    }
+    
+    .coming-text {
+        font-size: 0.9rem;
+    }
+
+    .pitch-links {
+        align-items: flex-start;
+        width: auto;
+        margin-top: 0.5rem;
+    }
+
+    .pitch-link {
+        font-size: 1rem;
+    }
+}
+
+/* iPhone specific adjustments */
+@media only screen 
+    and (device-width: 375px) 
+    and (device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3),
+    only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2),
+    only screen 
+    and (device-width: 390px) 
+    and (device-height: 844px) 
+    and (-webkit-device-pixel-ratio: 3) {
+    
+    .card-container {
+        width: 130px;
+        height: 162px;
+    }
+
+    .about-content {
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .about h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .about p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+
+    .card-and-links {
+        padding: 0 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .legions-text {
+        font-size: 1.6rem;
+    }
+    
+    .coming-text {
+        font-size: 0.8rem;
+    }
+
+    .pitch-link {
+        font-size: 0.9rem;
     }
 } 
