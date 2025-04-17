@@ -2,9 +2,15 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
 
@@ -50,26 +56,18 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Auto-scroll to The LEGIONS project section after the home page animation
-setTimeout(function() {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-        // Force layout recalculation for mobile
-        aboutSection.style.display = 'flex';
-        aboutSection.offsetHeight; // Force reflow
-        
-        // Smooth scroll with fallback for mobile
-        try {
-            aboutSection.scrollIntoView({ 
+// Auto-scroll to about section after a delay
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        const aboutSection = document.querySelector('#about');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
-        } catch (error) {
-            // Fallback for browsers that don't support smooth scrolling
-            window.scrollTo(0, aboutSection.offsetTop);
         }
-    }
-}, 6500); // Exactly 6.5 seconds to match the animation duration
+    }, 6500); // 6.5 seconds delay
+});
 
 // Handle audio playback
 const audio = document.getElementById('background-audio');
