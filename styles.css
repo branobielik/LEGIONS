@@ -414,7 +414,8 @@ footer {
 
     .card-container {
         width: 140px;
-        height: 175px;
+        height: 196px;
+        aspect-ratio: 5/7;
     }
 
     .right-content {
@@ -492,8 +493,9 @@ footer {
     }
 
     .card-container {
-        width: 130px;
-        height: 162px;
+        width: 120px;
+        height: 168px;
+        aspect-ratio: 5/7;
     }
 
     .card-and-links {
@@ -556,12 +558,13 @@ footer {
 .card-container {
     position: relative;
     width: 280px;
-    height: 350px;
+    height: 392px;
     perspective: 1000px;
     margin: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    aspect-ratio: 5/7;
 }
 
 .rotating-card {
@@ -694,6 +697,7 @@ footer {
     .card-container {
         width: 360px;
         height: 504px;
+        aspect-ratio: 5/7;
     }
 }
 
@@ -701,7 +705,8 @@ footer {
 @media (max-width: 768px) {
     .card-container {
         width: 140px;
-        height: 175px;
+        height: 196px;
+        aspect-ratio: 5/7;
     }
 }
 
@@ -721,6 +726,7 @@ footer {
     
     .card-container {
         width: 120px;
-        height: 150px;
+        height: 168px;
+        aspect-ratio: 5/7;
     }
 } 
