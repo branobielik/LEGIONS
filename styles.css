@@ -178,16 +178,18 @@ nav {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
+    overflow: hidden;
 }
 
 .about-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
+    width: 100%;
 }
 
 .about-content h2,
@@ -627,6 +629,7 @@ footer {
     margin-bottom: 2rem;
     opacity: 0;
     width: 100%;
+    animation: fadeInOut 7s ease-in-out 7.5s forwards;
 }
 
 .legions-text {
@@ -662,10 +665,6 @@ footer {
     }
 }
 
-.coming-soon-text {
-    animation: fadeInOut 7s ease-in-out 7.5s forwards;
-}
-
 /* Add dimming overlay for the entire page during animation */
 .page-overlay {
     position: fixed;
@@ -696,12 +695,10 @@ footer {
 }
 
 .right-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1rem;
+    position: relative;
     width: 100%;
     padding-right: 3rem;
+    min-height: 100%;
 }
 
 /* Desktop-specific styles */
