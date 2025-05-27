@@ -479,8 +479,10 @@ footer {
     }
 
     .card-and-links {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
         gap: 0.5rem;
+        align-items: center;
     }
 
     .card-container {
@@ -490,6 +492,29 @@ footer {
 
     .right-content {
         padding: 0;
+        width: auto;
+    }
+
+    .coming-soon-text {
+        margin: 0;
+        text-align: left;
+    }
+
+    .legions-text {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .coming-text {
+        font-size: 0.7rem;
+    }
+
+    .pitch-links {
+        margin-top: 0.3rem;
+    }
+
+    .pitch-link {
+        font-size: 0.8rem;
     }
 }
 
