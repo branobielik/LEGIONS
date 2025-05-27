@@ -423,11 +423,12 @@ footer {
         padding: 0 0.5rem;
         gap: 0.5rem;
         width: 100%;
+        margin-top: 0.5rem;
     }
 
     .card-container {
-        width: 120px;
-        height: 168px;
+        width: 100px;
+        height: 140px;
         margin: 0;
     }
 
@@ -437,7 +438,7 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 168px; /* Match card height */
+        height: 140px;
     }
 
     .coming-soon-text {
@@ -448,22 +449,23 @@ footer {
     }
 
     .legions-text {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         margin-bottom: 0.2rem;
     }
     
     .coming-text {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .pitch-links {
         align-items: flex-start;
         width: auto;
         margin-top: auto;
+        margin-bottom: 0;
     }
 
     .pitch-link {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     /* Fix for iOS notch */
@@ -477,52 +479,7 @@ footer {
     }
 }
 
-/* Android and iOS specific adjustments */
-@media screen and (max-width: 768px) and (orientation: portrait) {
-    .about {
-        padding: 60px 0;
-    }
-
-    .about-content {
-        padding: 0.5rem;
-    }
-
-    .card-and-links {
-        justify-content: flex-start;
-        gap: 0.5rem;
-    }
-
-    .card-container {
-        width: 100px;
-        height: 140px;
-    }
-
-    .right-content {
-        height: 140px; /* Match card height */
-    }
-
-    .coming-soon-text {
-        margin: 0;
-        text-align: left;
-    }
-
-    .legions-text {
-        font-size: 1.2rem;
-        margin-bottom: 0.2rem;
-    }
-    
-    .coming-text {
-        font-size: 0.7rem;
-    }
-
-    .pitch-links {
-        margin-top: auto;
-    }
-
-    .pitch-link {
-        font-size: 0.8rem;
-    }
-}
+/* Remove the separate Android/iOS media query since we're handling all mobile devices in one place */
 
 .pitch-links {
     display: flex;
