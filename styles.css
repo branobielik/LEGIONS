@@ -710,4 +710,16 @@ footer {
         height: 168px;
         aspect-ratio: 5/7;
     }
+}
+
+@media (max-width: 768px) {
+    .pitch-link:not(.mobile-version .pitch-link) {
+        font-size: 0.51rem !important;
+    }
+    .legions-text {
+        font-size: 0.66rem !important;
+    }
+    .coming-text {
+        font-size: 0.396rem !important;
+    }
 } 
