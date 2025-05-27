@@ -405,45 +405,55 @@ footer {
     }
 
     .card-and-links {
+        display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 1rem;
-        gap: 1rem;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding: 0;
+        min-height: 0;
     }
-
     .card-container {
-        width: 140px;
-        height: 196px;
-        aspect-ratio: 5/7;
+        width: 100px;
+        height: 140px;
+        margin: 0;
+        flex-shrink: 0;
     }
-
     .right-content {
-        padding-right: 0;
-        align-items: flex-start;
-        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100px;
+        min-width: 100px;
+        max-width: 100px;
+        height: 140px;
+        margin: 0;
+        padding: 0;
     }
-
     .coming-soon-text {
-        margin: 0 0 0.5rem 0;
+        width: 100%;
+        margin: 0;
+        text-align: center;
     }
-
     .legions-text {
-        font-size: 1.8rem;
-    }
-    
-    .coming-text {
-        font-size: 0.9rem;
-    }
-
-    .pitch-links {
-        align-items: flex-start;
-        width: auto;
-        margin-top: 0.5rem;
-    }
-
-    .pitch-link {
         font-size: 1rem;
+    }
+    .coming-text {
+        font-size: 0.6rem;
+    }
+    .pitch-links {
+        width: 100%;
+        align-items: center;
+        margin: 0;
+        gap: 0.2rem;
+    }
+    .pitch-link, .mobile-version .pitch-link {
+        width: 100%;
+        text-align: center;
+        font-size: 0.7rem;
     }
 
     /* Fix for iOS notch */
