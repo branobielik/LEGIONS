@@ -405,59 +405,44 @@ footer {
     }
 
     .card-and-links {
-        display: flex;
         flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        width: 100%;
-        gap: 0.5rem;
-        margin-top: 1rem;
-        position: relative;
-        min-height: 140px;
-    }
-    .card-container {
-        width: 100px;
-        height: 140px;
-        margin: 0;
-        flex-shrink: 0;
-    }
-    .right-content {
-        display: flex;
-        flex-direction: column;
+        align-items: center;
         justify-content: space-between;
-        align-items: center;
-        width: 100px;
-        min-width: 100px;
-        max-width: 100px;
-        height: 140px;
-        margin-left: 0.5rem;
-        position: relative;
+        padding: 0 1rem;
+        gap: 1rem;
     }
+
+    .card-container {
+        width: 140px;
+        height: 175px;
+    }
+
+    .right-content {
+        padding-right: 0;
+        align-items: flex-start;
+        width: auto;
+    }
+
     .coming-soon-text {
-        width: 100%;
-        margin: 0;
-        text-align: center;
+        margin: 0 0 0.5rem 0;
     }
+
     .legions-text {
-        font-size: 0.65rem;
+        font-size: 1.8rem;
     }
+    
     .coming-text {
-        font-size: 0.4rem;
+        font-size: 0.9rem;
     }
+
     .pitch-links {
-        width: 100px;
-        align-items: center;
-        margin: 0;
-        gap: 0.2rem;
-        position: static;
-        bottom: auto;
-        left: auto;
-        right: auto;
-        text-align: center;
+        align-items: flex-start;
+        width: auto;
+        margin-top: 0.5rem;
     }
-    .pitch-link, .mobile-version .pitch-link {
-        width: 100%;
-        text-align: center;
+
+    .pitch-link {
+        font-size: 1rem;
     }
 
     /* Fix for iOS notch */
@@ -471,7 +456,7 @@ footer {
     }
 }
 
-/* Remove iPhone-specific font-size overrides for moving text */
+/* iPhone specific adjustments */
 @media only screen 
     and (device-width: 375px) 
     and (device-height: 812px) 
@@ -484,18 +469,48 @@ footer {
     and (device-width: 390px) 
     and (device-height: 844px) 
     and (-webkit-device-pixel-ratio: 3) {
-    .legions-text, .coming-text {
-        font-size: unset !important;
+    
+    .hero::before {
+        background-size: contain;
+        background-position: center;
     }
-}
 
-/* Ensure small font-size for moving text on all mobile devices */
-@media (max-width: 768px) {
-    .legions-text {
-        font-size: 0.65rem !important;
+    .about-content {
+        padding: 0.5rem;
+        gap: 0.5rem;
     }
+
+    .about h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .about p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+
+    .card-container {
+        width: 130px;
+        height: 162px;
+    }
+
+    .card-and-links {
+        padding: 0 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .legions-text {
+        font-size: 1.6rem;
+    }
+    
     .coming-text {
-        font-size: 0.4rem !important;
+        font-size: 0.8rem;
+    }
+
+    .pitch-link {
+        font-size: 0.9rem;
     }
 }
 
@@ -541,13 +556,12 @@ footer {
 .card-container {
     position: relative;
     width: 280px;
-    height: 392px;
+    height: 350px;
     perspective: 1000px;
     margin: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 5/7;
 }
 
 .rotating-card {
@@ -680,7 +694,6 @@ footer {
     .card-container {
         width: 360px;
         height: 504px;
-        aspect-ratio: 5/7;
     }
 }
 
@@ -688,8 +701,7 @@ footer {
 @media (max-width: 768px) {
     .card-container {
         width: 140px;
-        height: 196px;
-        aspect-ratio: 5/7;
+        height: 175px;
     }
 }
 
@@ -709,7 +721,6 @@ footer {
     
     .card-container {
         width: 120px;
-        height: 168px;
-        aspect-ratio: 5/7;
+        height: 150px;
     }
 } 
