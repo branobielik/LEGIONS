@@ -405,15 +405,17 @@ footer {
     }
 
     .card-and-links {
+        position: relative;
+    }
+    .card-links-bottom {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100px;
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        width: 100%;
-        gap: 0.5rem;
-        margin-top: 1rem;
-        padding: 0;
-        min-height: 0;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
     }
     .card-container {
         width: 100px;
@@ -750,6 +752,7 @@ footer {
         width: 100%;
         margin-top: 1rem;
         padding: 0;
+        min-height: 0;
     }
     .card-container {
         width: 100px;
@@ -771,21 +774,13 @@ footer {
         margin: 0.2rem 0 0.2rem 0;
         text-align: center;
     }
-    .legions-text {
-        font-size: 1rem;
-    }
-    .coming-text {
-        font-size: 0.6rem;
-    }
-    .pitch-links {
-        width: 100%;
+    .card-links-bottom {
+        position: static;
+        width: 100px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        margin: 0;
-        gap: 0.2rem;
-    }
-    .pitch-link, .mobile-version .pitch-link {
-        width: 100%;
-        text-align: center;
-        font-size: 0.7rem;
+        z-index: 2;
     }
 } 
