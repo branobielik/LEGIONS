@@ -444,12 +444,18 @@ footer {
     }
     .pitch-links {
         width: 135px !important;
+        align-items: center !important;
+        margin: 1cm 0 0 0 !important;
+        gap: 0.1rem !important;
+        position: static !important;
+        text-align: center !important;
     }
-    .pitch-link, .mobile-version .pitch-link {
+    .mobile-version .pitch-link {
+        font-size: 0.8rem !important;
+        margin-top: 0.2rem !important;
         width: 100% !important;
         text-align: center !important;
-        font-size: 0.6rem !important;
-        padding: 0.1rem 0 !important;
+        display: block !important;
     }
 
     /* Fix for iOS notch */
