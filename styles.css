@@ -745,8 +745,8 @@ footer {
 
 @media (max-width: 768px) and (orientation: portrait) {
     .card-and-links {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        align-items: flex-start;
         justify-content: flex-start;
         gap: 0.5rem;
         width: 100%;
@@ -757,16 +757,19 @@ footer {
     .card-container {
         width: 100px;
         height: 140px;
-        margin: 0 auto;
+        margin: 0;
+        flex-shrink: 0;
     }
     .right-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
         width: 100px;
         min-width: 100px;
         max-width: 100px;
-        height: auto;
-        margin: 0 auto;
-        align-items: center;
-        justify-content: flex-start;
+        height: 140px;
+        margin: 0;
         padding: 0;
     }
     .coming-soon-text {
@@ -775,12 +778,17 @@ footer {
         text-align: center;
     }
     .card-links-bottom {
-        position: static;
         width: 100px;
-        margin: 0 auto;
+        margin: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         z-index: 2;
+        position: static;
+    }
+    .pitch-link, .mobile-version .pitch-link {
+        width: 100%;
+        text-align: center;
+        font-size: 0.7rem;
     }
 } 
