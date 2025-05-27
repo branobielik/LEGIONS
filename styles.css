@@ -739,4 +739,53 @@ footer {
         height: 168px;
         aspect-ratio: 5/7;
     }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .card-and-links {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0;
+    }
+    .card-container {
+        width: 100px;
+        height: 140px;
+        margin: 0 auto;
+    }
+    .right-content {
+        width: 100px;
+        min-width: 100px;
+        max-width: 100px;
+        height: auto;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+    }
+    .coming-soon-text {
+        width: 100%;
+        margin: 0.2rem 0 0.2rem 0;
+        text-align: center;
+    }
+    .legions-text {
+        font-size: 1rem;
+    }
+    .coming-text {
+        font-size: 0.6rem;
+    }
+    .pitch-links {
+        width: 100%;
+        align-items: center;
+        margin: 0;
+        gap: 0.2rem;
+    }
+    .pitch-link, .mobile-version .pitch-link {
+        width: 100%;
+        text-align: center;
+        font-size: 0.7rem;
+    }
 } 
