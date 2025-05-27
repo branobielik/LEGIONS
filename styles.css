@@ -424,12 +424,12 @@ footer {
     .right-content {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: flex-end;
-        width: 100px;
+        width: 120px;
         height: 140px;
-        min-width: 100px;
-        max-width: 100px;
+        min-width: 120px;
+        max-width: 140px;
         margin-left: 0.5rem;
         position: relative;
     }
@@ -445,20 +445,19 @@ footer {
         font-size: 0.4rem;
     }
     .pitch-links {
-        width: 100%;
-        align-items: center;
+        width: 120px;
+        align-items: flex-end;
         margin: 0;
         gap: 0.2rem;
         position: absolute;
         bottom: 0;
         right: 0;
-        left: 0;
         text-align: center;
+        left: auto;
     }
     .pitch-link, .mobile-version .pitch-link {
         width: 100%;
         text-align: center;
-        font-size: 0.7rem;
     }
 
     /* Fix for iOS notch */
