@@ -437,10 +437,10 @@ footer {
         text-align: center !important;
     }
     .legions-text {
-        font-size: 0.5rem !important;
+        font-size: 0.55rem !important;
     }
     .coming-text {
-        font-size: 0.3rem !important;
+        font-size: 0.33rem !important;
     }
     .pitch-links {
         width: 135px !important;
@@ -451,7 +451,7 @@ footer {
         text-align: center !important;
     }
     .mobile-version .pitch-link {
-        font-size: 0.8rem !important;
+        font-size: 1rem !important;
         margin-top: 0.2rem !important;
         width: 100% !important;
         text-align: center !important;
