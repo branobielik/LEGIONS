@@ -405,11 +405,11 @@ footer {
         max-width: 100vw !important;
     }
     .about h2 {
-        font-size: 1.44rem !important;
+        font-size: 1.8rem !important;
         margin-bottom: 0.3rem !important;
     }
     .about p {
-        font-size: 0.96rem !important;
+        font-size: 1.2rem !important;
         margin-bottom: 0.3rem !important;
         line-height: 1.2 !important;
     }
@@ -440,10 +440,10 @@ footer {
         text-align: center !important;
     }
     .legions-text {
-        font-size: 0.9504rem !important;
+        font-size: 1.4256rem !important;
     }
     .coming-text {
-        font-size: 0.57024rem !important;
+        font-size: 0.85536rem !important;
     }
     .pitch-links {
         width: 148.5px !important;
@@ -713,9 +713,9 @@ footer {
         font-size: 0.51rem !important;
     }
     .legions-text {
-        font-size: 0.66rem !important;
+        font-size: 1.4256rem !important;
     }
     .coming-text {
-        font-size: 0.396rem !important;
+        font-size: 0.85536rem !important;
     }
 } 
