@@ -424,7 +424,7 @@ footer {
     .right-content {
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
         width: 100px;
         min-width: 100px;
@@ -449,10 +449,10 @@ footer {
         align-items: center;
         margin: 0;
         gap: 0.2rem;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        position: static;
+        bottom: auto;
+        left: auto;
+        right: auto;
         text-align: center;
     }
     .pitch-link, .mobile-version .pitch-link {
