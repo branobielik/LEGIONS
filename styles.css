@@ -178,18 +178,16 @@ nav {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
-    overflow: hidden;
 }
 
 .about-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     max-width: 800px;
     margin: 0 auto;
-    padding: 1rem;
-    width: 100%;
+    padding: 2rem;
 }
 
 .about-content h2,
@@ -407,17 +405,16 @@ footer {
     }
 
     .card-and-links {
-        position: relative;
-    }
-    .card-links-bottom {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 100px;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 2;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding: 0;
+        position: relative;
+        min-height: 140px;
     }
     .card-container {
         width: 100px;
@@ -429,30 +426,38 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
         width: 100px;
+        height: 140px;
         min-width: 100px;
         max-width: 100px;
-        height: 140px;
         margin: 0;
         padding: 0;
+        position: relative;
     }
     .coming-soon-text {
         width: 100%;
         margin: 0;
         text-align: center;
+        font-size: 0.8rem;
     }
     .legions-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     .coming-text {
         font-size: 0.6rem;
     }
     .pitch-links {
         width: 100%;
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: flex-end;
         margin: 0;
         gap: 0.2rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
     .pitch-link, .mobile-version .pitch-link {
         width: 100%;
@@ -629,7 +634,6 @@ footer {
     margin-bottom: 2rem;
     opacity: 0;
     width: 100%;
-    animation: fadeInOut 7s ease-in-out 7.5s forwards;
 }
 
 .legions-text {
@@ -665,6 +669,10 @@ footer {
     }
 }
 
+.coming-soon-text {
+    animation: fadeInOut 7s ease-in-out 7.5s forwards;
+}
+
 /* Add dimming overlay for the entire page during animation */
 .page-overlay {
     position: fixed;
@@ -695,10 +703,12 @@ footer {
 }
 
 .right-content {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
     width: 100%;
     padding-right: 3rem;
-    min-height: 100%;
 }
 
 /* Desktop-specific styles */
@@ -737,55 +747,5 @@ footer {
         width: 120px;
         height: 168px;
         aspect-ratio: 5/7;
-    }
-}
-
-@media (max-width: 768px) and (orientation: portrait) {
-    .card-and-links {
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 0.5rem;
-        width: 100%;
-        margin-top: 1rem;
-        padding: 0;
-        min-height: 0;
-    }
-    .card-container {
-        width: 100px;
-        height: 140px;
-        margin: 0;
-        flex-shrink: 0;
-    }
-    .right-content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        width: 100px;
-        min-width: 100px;
-        max-width: 100px;
-        height: 140px;
-        margin: 0;
-        padding: 0;
-    }
-    .coming-soon-text {
-        width: 100%;
-        margin: 0.2rem 0 0.2rem 0;
-        text-align: center;
-    }
-    .card-links-bottom {
-        width: 100px;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 2;
-        position: static;
-    }
-    .pitch-link, .mobile-version .pitch-link {
-        width: 100%;
-        text-align: center;
-        font-size: 0.7rem;
     }
 } 
