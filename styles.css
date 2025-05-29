@@ -440,6 +440,22 @@ footer {
         font-size: 1.4rem;
     }
 
+    .reagan-quote {
+        bottom: 2rem;
+        right: 1rem;
+        max-width: 250px;
+        background: none;
+        padding: 0;
+    }
+    
+    .reagan-quote p {
+        font-size: 0.6rem;
+    }
+    
+    .quote-attribution {
+        font-size: 0.5rem !important;
+    }
+
     .about-content {
         margin-top: -4cm !important;
         padding: 0.5rem !important;
@@ -757,5 +773,20 @@ footer {
     }
     .coming-text {
         font-size: 0.594rem !important;
+    }
+    .reagan-quote {
+        bottom: 2rem;
+        right: 1rem;
+        max-width: 250px;
+        background: none;
+        padding: 0;
+    }
+    
+    .reagan-quote p {
+        font-size: 0.6rem;
+    }
+    
+    .quote-attribution {
+        font-size: 0.5rem !important;
     }
 } 
