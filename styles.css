@@ -441,7 +441,7 @@ footer {
     }
 
     .reagan-quote {
-        bottom: 2rem;
+        bottom: 3rem;
         right: 1rem;
         max-width: 250px;
         background: none;
@@ -764,29 +764,4 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    .pitch-link:not(.mobile-version .pitch-link) {
-        font-size: 0.51rem !important;
-    }
-    .legions-text {
-        font-size: 0.99rem !important;
-    }
-    .coming-text {
-        font-size: 0.594rem !important;
-    }
-    .reagan-quote {
-        bottom: 2rem;
-        right: 1rem;
-        max-width: 250px;
-        background: none;
-        padding: 0;
-    }
-    
-    .reagan-quote p {
-        font-size: 0.6rem;
-    }
-    
-    .quote-attribution {
-        font-size: 0.5rem !important;
-    }
-} 
+/* REMOVE THIS DUPLICATE MEDIA QUERY BLOCK */ 
