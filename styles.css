@@ -153,10 +153,6 @@ nav {
     opacity: 0;
     animation: fadeIn 2s ease-in-out 3s forwards;
     z-index: 3;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 1rem;
-    border-radius: 8px;
-    backdrop-filter: blur(4px);
 }
 
 .reagan-quote p {
