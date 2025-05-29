@@ -146,17 +146,17 @@ nav {
 
 .reagan-quote {
     position: absolute;
-    bottom: 4rem;
-    right: 4rem;
+    bottom: 10rem;
+    right: 1rem;
     text-align: right;
-    max-width: 400px;
+    max-width: 250px;
     opacity: 0;
     animation: fadeIn 2s ease-in-out 3s forwards;
     z-index: 1001;
 }
 
 .reagan-quote p {
-    font-size: 1rem;
+    font-size: 0.7rem;
     margin: 0;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     animation: none;
@@ -165,7 +165,7 @@ nav {
 }
 
 .quote-attribution {
-    font-size: 0.8rem !important;
+    font-size: 0.6rem !important;
     font-style: italic;
     margin-top: 0.3rem !important;
     opacity: 0.9;
@@ -455,14 +455,16 @@ footer {
         background: none;
         padding: 0;
         z-index: 1001;
+        opacity: 1;
+        animation: none;
     }
     
     .reagan-quote p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     
     .quote-attribution {
-        font-size: 0.7rem !important;
+        font-size: 0.6rem !important;
     }
 
     .about-content {
