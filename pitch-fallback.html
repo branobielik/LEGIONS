@@ -82,6 +82,13 @@
                 padding: 8px 16px;
                 font-size: 14px;
             }
+            .fullscreen-button {
+                top: 10px;
+                right: 55px;
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
             @media (orientation: portrait) {
                 .orientation-message {
                     display: flex;
@@ -123,6 +130,30 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        .close-pitch:hover {
+            background: #2980b9;
+        }
+        .fullscreen-button {
+            position: absolute;
+            top: 15px;
+            right: 65px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #3498db;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            z-index: 1001;
+        }
+        .fullscreen-button:hover {
+            background: #2980b9;
+        }
     </style>
 </head>
 <body>
@@ -134,6 +165,8 @@
             <p>Please rotate your device to landscape mode<br>for the best viewing experience</p>
         </div>
     </div>
+
+    <button class="fullscreen-button" onclick="toggleFullscreen()">⛶</button>
 
     <div class="loading-indicator">
         <div class="spinner"></div>
@@ -161,6 +194,28 @@
                 window.scrollTo(0, 0);
             }, 200);
         });
+
+        // Fullscreen functionality
+        function toggleFullscreen() {
+            const viewerContainer = document.querySelector('.viewer-container');
+            if (!document.fullscreenElement) {
+                if (viewerContainer.requestFullscreen) {
+                    viewerContainer.requestFullscreen();
+                } else if (viewerContainer.webkitRequestFullscreen) {
+                    viewerContainer.webkitRequestFullscreen();
+                } else if (viewerContainer.msRequestFullscreen) {
+                    viewerContainer.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        }
 
         // Reload iframe if it fails to load within 5 seconds
         setTimeout(function() {

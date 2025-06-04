@@ -78,12 +78,46 @@
             display: block;
             transform: rotate(90deg);
         }
+        .close-pitch:hover {
+            background: #2980b9;
+        }
+
+        .fullscreen-button {
+            position: absolute;
+            top: 15px;
+            right: 65px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #3498db;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            z-index: 1001;
+        }
+
+        .fullscreen-button:hover {
+            background: #2980b9;
+        }
+
         @media (max-width: 768px) {
             .back-button {
                 top: 10px;
                 left: 10px;
                 padding: 8px 16px;
                 font-size: 14px;
+            }
+            .fullscreen-button {
+                top: 10px;
+                right: 55px;
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
             }
             @media (orientation: portrait) {
                 .orientation-message {
@@ -114,6 +148,8 @@
         </div>
     </div>
 
+    <button class="fullscreen-button" onclick="toggleFullscreen()">⛶</button>
+
     <div class="viewer-container">
         <object class="pdf-viewer" 
                 data="pitch deck/pitch-deck.pdf#view=Fit" 
@@ -136,6 +172,28 @@
                 window.scrollTo(0, 0);
             }, 200);
         });
+
+        // Fullscreen functionality
+        function toggleFullscreen() {
+            const viewerContainer = document.querySelector('.viewer-container');
+            if (!document.fullscreenElement) {
+                if (viewerContainer.requestFullscreen) {
+                    viewerContainer.requestFullscreen();
+                } else if (viewerContainer.webkitRequestFullscreen) {
+                    viewerContainer.webkitRequestFullscreen();
+                } else if (viewerContainer.msRequestFullscreen) {
+                    viewerContainer.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        }
     </script>
 </body>
 </html> 
