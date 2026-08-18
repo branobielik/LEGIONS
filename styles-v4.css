@@ -543,13 +543,13 @@ input {
 .robot-bad {
     top: 17.55vh;
     left: 13.66vw;
-    height: 69.3vh;
+    height: min(69.3vh, 39vw);
 }
 
 .robot-good {
     top: 13.95vh;
     right: 13.57vw;
-    height: 76.33vh;
+    height: min(76.33vh, 42.92vw);
     transform: scaleX(-1);
 }
 
@@ -922,13 +922,13 @@ html[data-active-pair="2"] .flip-card[data-pair="2"] .flip-card-inner {
     .robot-bad {
         top: 17.55vh;
         left: 13.66vw;
-        height: 69.3vh;
+        height: min(69.3vh, 39vw);
     }
 
     .robot-good {
         top: 13.95vh;
         right: 13.57vw;
-        height: 76.33vh;
+        height: min(76.33vh, 42.92vw);
     }
 
     .card-zone {
@@ -1048,7 +1048,17 @@ html[data-active-pair="2"] .flip-card[data-pair="2"] .flip-card-inner {
     }
 
     .hero-robots {
-        display: none;
+        display: block;
+    }
+
+    .robot-bad {
+        left: 4vw;
+        height: 33vw;
+    }
+
+    .robot-good {
+        right: 4vw;
+        height: 36.3vw;
     }
 
     .card-zone {
