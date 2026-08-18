@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="LEGIONS - A modern responsive website">
+    <meta name="theme-color" content="#080d13">
+    <title>LEGIONS</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span>LEGIONS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">The LEGIONS Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-overlay"></div>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>LEGIONS</h1>
+                <p>The Future of Trading Card Games</p>
+                <div class="reagan-quote">
+                    <p>"And yet, I ask you, is not an alien force already among us?"</p>
+                    <p class="quote-attribution">(Ronald Reagan, UN speech 1987)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about-content">
+                <h2>The LEGIONS Project</h2>
+                <p>LEGIONS is more than a TCG—it's a revolution. With unique mechanics, limitless scalability, and groundbreaking innovations, it's the future of trading card games. A rare opportunity for bold visionaries ready to own the market.</p>
+                <div class="card-and-links">
+                    <div class="card-container">
+                        <div class="rotating-card">
+                            <div class="card-face card-front">
+                                <img src="images/card front.jpg" alt="Card Front">
+                            </div>
+                            <div class="card-face card-back">
+                                <img src="images/card back.jpg" alt="Card Back">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-content">
+                        <div class="coming-soon-text">
+                            <span class="legions-text">LEGIONS</span>
+                            <span class="coming-text">coming to you in 2025!</span>
+                        </div>
+                        <div class="pitch-links">
+                            <a href="pitch.html" class="pitch-link">Here's a pitch for you!</a>
+                            <div class="mobile-version">
+                                <a href="pitch-fallback.html" class="pitch-link">
+                                    <i class="fas fa-mobile-alt"></i> for MOBILE version
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <audio id="background-audio" preload="auto">
+                <source src="images/longer version no loop qm.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+
+        <section id="pitch" class="pitch hidden">
+            <div class="pitch-content">
+                <div class="pdf-container" id="pdf-container">
+                    <!-- Fallback message if PDF fails to load -->
+                    <div class="pdf-fallback">
+                        <p>Loading presentation...</p>
+                    </div>
+                </div>
+                <button class="close-pitch" onclick="closePitch()">×</button>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="contact-content">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <a href="mailto:email@branobielik.com" class="contact-email">
+                        <i class="fas fa-envelope"></i> email@branobielik.com
+                    </a>
+                    <a href="tel:+421907586768" class="contact-phone">
+                        <i class="fas fa-phone"></i> +421 907 586 768
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 LEGIONS. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
